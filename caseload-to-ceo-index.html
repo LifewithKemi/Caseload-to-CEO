@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Caseload to CEO helps licensed therapists build a private practice, create income freedom, and turn their license into a lifestyle business."/>
+<title>Caseload to CEO™ — Crystal Kelly, LMHC</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --coral:#E8714A;
+  --coral-deep:#D85F39;
+  --coral-light:#F5A98A;
+  --coral-pale:#FDE8DE;
+  --navy:#1B3A5C;
+  --navy-mid:#2E5F8A;
+  --navy-deep:#12263D;
+  --navy-light:#D4E6F5;
+  --cream:#FDFAF6;
+  --warm-white:#FFF7F2;
+  --sand:#F5EDE3;
+  --text:#2A1F18;
+  --muted:#7A6860;
+  --border:rgba(232,113,74,0.15);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;font-size:16px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(253,250,246,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-brand{display:flex;align-items:center;gap:0.9rem}
+.logo-mark{height:56px;width:auto;display:block;filter:brightness(0) saturate(100%) invert(22%) sepia(22%) saturate(1078%) hue-rotate(171deg) brightness(92%) contrast(90%)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--navy);letter-spacing:0.03em}
+.nav-logo span{color:var(--coral)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--coral)}
+.nav-cta{background:var(--coral);color:#fff;padding:0.7rem 1.5rem;border-radius:999px;font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(232,113,74,0.3)}
+.nav-cta:hover{background:var(--navy);box-shadow:0 4px 20px rgba(27,58,92,0.3)}
+
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:end;background:var(--warm-white);position:relative;overflow:hidden;padding-top:82px}
+.hero-bg-blob{position:absolute;right:-100px;top:80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(212,230,245,0.6) 0%,transparent 70%);pointer-events:none}
+.hero-bg-blob2{position:absolute;left:-80px;bottom:-60px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(232,113,74,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-content{padding:4rem 3rem 5rem 5rem;position:relative;z-index:2}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--coral);margin-bottom:1.4rem;background:var(--coral-pale);padding:0.45rem 1rem;border-radius:999px}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:4.2rem;line-height:1.05;font-weight:700;color:var(--navy);margin-bottom:1.4rem}
+.hero-title em{font-style:italic;color:var(--coral)}
+.hero-sub{font-size:1.05rem;line-height:1.75;color:var(--muted);max-width:520px;margin-bottom:2rem;font-weight:300}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn-primary,.btn-outline{display:inline-block;padding:0.95rem 2rem;font-size:0.84rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border-radius:999px;text-decoration:none;transition:all 0.25s}
+.btn-primary{background:var(--coral);color:#fff;box-shadow:0 6px 24px rgba(232,113,74,0.35)}
+.btn-primary:hover{background:var(--navy);transform:translateY(-2px);box-shadow:0 8px 30px rgba(27,58,92,0.3)}
+.btn-outline{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+.btn-outline:hover{background:var(--navy);color:#fff}
+.hero-trust{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.trust-badge{display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:var(--muted);font-weight:600}
+.trust-dot{width:6px;height:6px;border-radius:50%;background:var(--coral-light)}
+.hero-photo-col{position:relative;display:flex;align-items:flex-end;justify-content:center;height:100%;min-height:760px;overflow:hidden}
+.hero-photo-bg{position:absolute;inset:0;background:linear-gradient(160deg,var(--navy-light) 0%,var(--coral-pale) 100%)}
+.hero-photo-arc{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,var(--warm-white) 30%,transparent 70%)}
+.crystal-photo{position:relative;z-index:2;width:100%;height:100%;object-fit:cover;object-position:center top}
+.photo-name-tag{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:10;background:white;border-radius:14px;padding:1rem 1.5rem;box-shadow:0 8px 40px rgba(0,0,0,0.12);text-align:center;white-space:nowrap;border:1px solid var(--border)}
+.photo-name-tag h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--navy)}
+.photo-name-tag p{font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--coral);font-weight:700;margin-top:0.2rem}
+
+section{padding:6rem 5rem}
+.section-label{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--coral);font-weight:700;margin-bottom:0.8rem;display:block}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:2.8rem;line-height:1.12;font-weight:700;color:var(--navy);margin-bottom:1rem}
+.section-title em{font-style:italic;color:var(--coral)}
+.section-sub{font-size:1rem;line-height:1.8;color:var(--muted);font-weight:300;max-width:560px}
+
+.burnout{background:var(--navy);padding:7rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.burnout .section-label{color:var(--coral-light)}
+.burnout .section-title{color:#fff}
+.burnout .section-sub{color:rgba(255,255,255,0.58)}
+.bq-stack{display:flex;flex-direction:column;gap:1.2rem}
+.bq{background:rgba(255,255,255,0.04);border-left:3px solid var(--coral);padding:1.1rem 1.3rem;border-radius:0 8px 8px 0;transition:all 0.2s}
+.bq:hover{background:rgba(255,255,255,0.07);transform:translateX(4px)}
+.bq p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;line-height:1.5;color:rgba(255,255,255,0.84)}
+
+.mindset{background:var(--cream)}
+.mindset-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:4rem}
+.mindset-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.m-card{background:var(--warm-white);border:1px solid var(--border);padding:2rem 1.5rem;border-radius:16px;position:relative;overflow:hidden;transition:all 0.25s}
+.m-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(232,113,74,0.15);border-color:var(--coral-light)}
+.m-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--coral),var(--navy-mid));opacity:0;transition:opacity 0.25s}
+.m-card:hover::after{opacity:1}
+.m-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;color:var(--coral-pale);margin-bottom:0.8rem;line-height:1}
+.m-card h3{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem}
+.m-card p{font-size:0.85rem;line-height:1.65;color:var(--muted)}
+
+.education{background:var(--navy-light);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.edu-items{display:flex;flex-direction:column;gap:1.2rem}
+.edu-item{display:flex;gap:1.2rem;align-items:flex-start;background:white;padding:1.3rem 1.5rem;border-radius:12px;border:1px solid rgba(27,58,92,0.08);transition:all 0.2s}
+.edu-item:hover{box-shadow:0 4px 20px rgba(27,58,92,0.1);transform:translateX(4px)}
+.edu-num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--coral);line-height:1;min-width:32px}
+.edu-text h4{font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:0.3rem}
+.edu-text p{font-size:0.82rem;line-height:1.6;color:var(--muted)}
+
+.bio{background:var(--warm-white);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.bio-photo-wrap{position:relative}
+.bio-photo-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--coral-pale),var(--navy-light));border-radius:20px}
+.bio-photo{width:100%;height:100%;min-height:620px;border-radius:20px;position:relative;z-index:2;display:block;object-fit:cover;object-position:center top}
+.bio-badge{position:absolute;top:-16px;right:-16px;z-index:10;background:var(--coral);color:white;width:90px;height:90px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-size:0.6rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;line-height:1.4;box-shadow:0 6px 24px rgba(232,113,74,0.4)}
+.credential-pills{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem}
+.pill{display:inline-block;background:var(--navy-light);color:var(--navy);font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.35rem 0.9rem;border-radius:50px}
+.bio-text{font-size:0.95rem;line-height:1.85;color:var(--muted);font-weight:300;margin-bottom:1.2rem}
+.bio-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border)}
+.bio-stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--coral)}
+.bio-stat-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);font-weight:700;margin-top:0.2rem}
+
+.money{background:var(--sand);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.money-cards{display:flex;flex-direction:column;gap:1rem}
+.money-card{display:flex;gap:1.2rem;align-items:flex-start;padding:1.4rem 1.5rem;background:white;border-radius:12px;border-left:4px solid var(--coral);box-shadow:0 2px 16px rgba(0,0,0,0.04);transition:all 0.2s}
+.money-card:hover{transform:translateX(6px);box-shadow:0 4px 24px rgba(232,113,74,0.12)}
+.money-icon{font-size:1.4rem;min-width:32px}
+.money-card h4{font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:0.3rem}
+.money-card p{font-size:0.82rem;color:var(--muted);line-height:1.6}
+
+.pricing{background:var(--navy);padding:7rem 5rem;text-align:center}
+.pricing .section-label{color:var(--coral-light)}
+.pricing .section-title{color:white;margin:0 auto 1rem;max-width:680px}
+.pricing .section-sub{color:rgba(255,255,255,0.58);margin:0 auto 3.5rem;text-align:center}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1000px;margin:0 auto 3rem}
+.p-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:2.5rem 2rem;text-align:center;position:relative;transition:all 0.25s}
+.p-card:hover{background:rgba(255,255,255,0.08);transform:translateY(-6px)}
+.p-card.featured{background:var(--coral);border-color:var(--coral);box-shadow:0 16px 60px rgba(232,113,74,0.4)}
+.p-featured-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--navy-mid);color:white;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.3rem 1rem;border-radius:50px;white-space:nowrap}
+.p-type{font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.58);margin-bottom:1rem}
+.p-card.featured .p-type{color:rgba(255,255,255,0.8)}
+.p-price{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:white;line-height:1}
+.p-price span{font-size:1.2rem;vertical-align:top;margin-top:0.4rem;display:inline-block}
+.p-name{font-size:0.9rem;font-weight:700;color:white;margin:0.5rem 0 1rem}
+.p-features{list-style:none;margin-bottom:2rem;text-align:left}
+.p-features li{font-size:0.82rem;color:rgba(255,255,255,0.74);padding:0.4rem 0;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;gap:0.5rem;align-items:flex-start}
+.p-features li::before{content:'✓';color:var(--coral-light);font-weight:700;flex-shrink:0}
+.p-card.featured .p-features li{color:rgba(255,255,255,0.9)}
+.p-card.featured .p-features li::before{color:white}
+.p-btn{display:block;width:100%;padding:0.9rem;font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;border-radius:999px;border:2px solid rgba(255,255,255,0.4);background:transparent;color:white;transition:all 0.2s;font-family:'Nunito Sans',sans-serif;text-decoration:none;text-align:center}
+.p-btn:hover{background:rgba(255,255,255,0.1)}
+.p-card.featured .p-btn{background:white;color:var(--coral);border-color:white}
+.p-card.featured .p-btn:hover{background:var(--navy);color:white;border-color:var(--navy)}
+.pricing-note{font-size:0.8rem;color:rgba(255,255,255,0.42);letter-spacing:0.04em;max-width:860px;margin:0 auto}
+
+.cta-section{background:var(--warm-white);text-align:center;padding:8rem 5rem;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(232,113,74,0.08) 0%,transparent 70%);pointer-events:none}
+.cta-box{background:var(--navy);max-width:640px;margin:0 auto;padding:3.5rem;border-radius:24px;position:relative;box-shadow:0 24px 80px rgba(27,58,92,0.2)}
+.cta-box h3{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:white;margin-bottom:0.5rem;line-height:1.2}
+.cta-box p{font-size:0.9rem;color:rgba(255,255,255,0.6);margin-bottom:2rem;line-height:1.7}
+.cta-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.cta-link{display:inline-block;padding:0.95rem 1.5rem;border-radius:999px;text-decoration:none;font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;transition:all 0.2s}
+.cta-link.primary{background:var(--coral);color:white;box-shadow:0 10px 30px rgba(232,113,74,0.3)}
+.cta-link.primary:hover{background:var(--coral-deep)}
+.cta-link.secondary{border:1.5px solid rgba(255,255,255,0.3);color:white}
+.cta-link.secondary:hover{background:rgba(255,255,255,0.08)}
+.cta-note{font-size:0.8rem;color:rgba(255,255,255,0.72);margin-bottom:1rem}
+.cta-contact{font-size:0.8rem;color:rgba(255,255,255,0.5)}
+.cta-contact a{color:var(--coral-light);text-decoration:none}
+.cta-contact a:hover{text-decoration:underline}
+
+footer{background:#0F2035;color:rgba(255,255,255,0.35);padding:2.5rem 5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer .f-logo{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;color:rgba(255,255,255,0.8)}
+footer .f-logo span{color:var(--coral)}
+footer p{font-size:0.75rem;letter-spacing:0.04em}
+footer nav{position:static;padding:0;border:none;background:none;backdrop-filter:none;display:flex;gap:1.5rem}
+footer nav a{font-size:0.72rem;color:rgba(255,255,255,0.38);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s}
+footer nav a:hover{color:var(--coral)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-content > *{animation:fadeUp 0.7s ease both}
+.hero-eyebrow{animation-delay:0.1s}
+.hero-title{animation-delay:0.22s}
+.hero-sub{animation-delay:0.34s}
+.hero-actions{animation-delay:0.46s}
+.hero-trust{animation-delay:0.58s}
+
+@media (max-width: 1100px){
+  nav{padding:1rem 1.5rem}
+  .hero,.burnout,.education,.bio,.money{grid-template-columns:1fr}
+  .hero-content,section{padding-left:1.5rem;padding-right:1.5rem}
+  .hero-content{padding-top:3rem;padding-bottom:2rem}
+  .hero-photo-col{min-height:560px}
+  .mindset-header,.mindset-grid,.pricing-grid{grid-template-columns:1fr}
+}
+
+@media (max-width: 760px){
+  nav{gap:1rem;flex-wrap:wrap;justify-content:center}
+  .nav-links{gap:1rem;flex-wrap:wrap;justify-content:center}
+  .hero-title{font-size:3rem}
+  .section-title{font-size:2.2rem}
+  .hero-trust{gap:0.8rem}
+  .cta-section,.pricing,.burnout{padding-left:1.25rem;padding-right:1.25rem}
+  .cta-box{padding:2rem 1.5rem}
+  .bio-stats{grid-template-columns:1fr}
+  footer{padding-left:1.25rem;padding-right:1.25rem}
+  footer nav{flex-wrap:wrap;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <img class="logo-mark" src="CaseLoadtoCEO Logo.png" alt="Caseload to CEO logo"/>
+    <div class="nav-logo">Caseload to <span>CEO</span>™</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#burnout">Reality Check</a></li>
+    <li><a href="#mindset">CEO Mindset</a></li>
+    <li><a href="#bio">About Crystal</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <a href="#cta" class="nav-cta">Work With Me</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg-blob"></div>
+  <div class="hero-bg-blob2"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">For Licensed Therapists Who Are Ready</div>
+    <h1 class="hero-title">From <em>Caseload</em><br>to <em>CEO</em>™</h1>
+    <p class="hero-sub">Turn your license into a lifestyle and income you control. Build a private practice with the systems, pricing, and confidence to create freedom without burnout.</p>
+    <div class="hero-actions">
+      <a href="#pricing" class="btn-primary">Choose Your Offer</a>
+      <a href="#burnout" class="btn-outline">See If This Is You</a>
+    </div>
+    <div class="hero-trust">
+      <span class="trust-badge"><span class="trust-dot"></span>16+ Years in the Field</span>
+      <span class="trust-badge"><span class="trust-dot"></span>Licensed LMHC</span>
+      <span class="trust-badge"><span class="trust-dot"></span>Practice Owner</span>
+    </div>
+  </div>
+  <div class="hero-photo-col">
+    <div class="hero-photo-bg"></div>
+    <div class="hero-photo-arc"></div>
+    <img class="crystal-photo" src="ChatGPT Image Apr 22, 2026, 09_11_01 AM.png" alt="Caseload to CEO promotional image with Crystal Kelly, LMHC"/>
+    <div class="photo-name-tag">
+      <h3>Crystal Kelly, MS, LMHC</h3>
+      <p>Owner · Uniquely You Counseling & Wellness</p>
+    </div>
+  </div>
+</section>
+
+<section class="burnout" id="burnout">
+  <div>
+    <span class="section-label">01 — Burnout & Reality Check</span>
+    <h2 class="section-title">You're not tired<br>of therapy.<br>You're tired of<br><em>the system.</em></h2>
+    <p class="section-sub">The impossible caseloads. The insurance battles. The emotional drain with no financial return. You went into this to help people, not to feel depleted, underpaid, and invisible every single day.</p>
+    <a href="#mindset" class="btn-primary" style="margin-top:2.5rem">There's Another Way</a>
+  </div>
+  <div class="bq-stack">
+    <div class="bq"><p>"You're not tired of therapy... you're tired of how you're forced to work."</p></div>
+    <div class="bq"><p>"Fully booked doesn't mean fulfilled."</p></div>
+    <div class="bq"><p>"Therapists are leaving the field and it's not because they stopped caring."</p></div>
+    <div class="bq"><p>"This isn't what I signed up for."</p></div>
+    <div class="bq"><p>"Your license is worth more than what they're paying you."</p></div>
+  </div>
+</section>
+
+<section class="mindset" id="mindset">
+  <div class="mindset-header">
+    <div>
+      <span class="section-label">02 — CEO Mindset Shift</span>
+      <h2 class="section-title">Stop thinking like<br>an employee.<br><em>Start owning it.</em></h2>
+    </div>
+    <div>
+      <p class="section-sub">You do not need another certification. You need a full identity shift from therapist-as-worker to therapist-as-owner. Your license is an asset. It is time to treat it like one.</p>
+      <a href="#bio" class="btn-outline" style="margin-top:1.5rem">Meet Crystal</a>
+    </div>
+  </div>
+  <div class="mindset-grid">
+    <div class="m-card"><div class="m-num">01</div><h3>Own Your Time</h3><p>Set real boundaries with your schedule, energy, and client load. You decide when and how you work.</p></div>
+    <div class="m-card"><div class="m-num">02</div><h3>Charge Your Worth</h3><p>Confidence in your rates is sustainability. Stop discounting yourself into exhaustion.</p></div>
+    <div class="m-card"><div class="m-num">03</div><h3>Build, Don't Survive</h3><p>You can do meaningful, impactful work and be well compensated for it.</p></div>
+    <div class="m-card"><div class="m-num">04</div><h3>Direction Over Degrees</h3><p>You need a clear, proven roadmap to build a practice on your own terms.</p></div>
+    <div class="m-card"><div class="m-num">05</div><h3>Stop Waiting for Permission</h3><p>No one is going to invite you to build your own practice. That decision belongs to you.</p></div>
+    <div class="m-card"><div class="m-num">06</div><h3>You're a Business</h3><p>The sooner you claim that identity, the faster everything changes. You are a CEO.</p></div>
+  </div>
+</section>
+
+<section class="education" id="education">
+  <div>
+    <span class="section-label">03 — Private Practice Education</span>
+    <h2 class="section-title"><em>Real answers.</em><br>No fluff.<br>No gatekeeping.</h2>
+    <p class="section-sub">The practical foundation no one taught you in grad school, broken down simply so you can use it and move forward.</p>
+    <a href="#pricing" class="btn-primary" style="margin-top:2rem">See the Program</a>
+  </div>
+  <div class="edu-items">
+    <div class="edu-item"><div class="edu-num">01</div><div class="edu-text"><h4>Business Setup Basics</h4><p>LLC, EIN, NPI, and the essentials simplified so you can launch without overwhelm.</p></div></div>
+    <div class="edu-item"><div class="edu-num">02</div><div class="edu-text"><h4>Insurance vs. Self-Pay</h4><p>Understand the model that actually serves your life, values, and income goals.</p></div></div>
+    <div class="edu-item"><div class="edu-num">03</div><div class="edu-text"><h4>Pricing Strategies</h4><p>Set rates with confidence and stop undercharging for the transformation you provide.</p></div></div>
+    <div class="edu-item"><div class="edu-num">04</div><div class="edu-text"><h4>Getting Your First Clients</h4><p>Learn how therapists actually build a caseload without gimmicks or feeling salesy.</p></div></div>
+    <div class="edu-item"><div class="edu-num">05</div><div class="edu-text"><h4>Systems for Consistency</h4><p>Create workflows that fill your calendar quietly while you focus on client care.</p></div></div>
+  </div>
+</section>
+
+<section class="bio" id="bio">
+  <div class="bio-photo-wrap">
+    <div class="bio-photo-bg"></div>
+    <img class="bio-photo" src="ChatGPT Image Apr 22, 2026, 09_11_01 AM.png" alt="Crystal Kelly, LMHC"/>
+    <div class="bio-badge">16+<br>Years in<br>the Field</div>
+  </div>
+  <div>
+    <span class="section-label">04 — Authority & Receipts</span>
+    <h2 class="section-title">She's <em>actually</em><br>done this.</h2>
+    <div class="credential-pills">
+      <span class="pill">MS · LMHC</span>
+      <span class="pill">Licensed Mental Health Counselor</span>
+      <span class="pill">Brainspotting Trained</span>
+      <span class="pill">Practice Owner</span>
+    </div>
+    <p class="bio-text">Crystal Kelly is a Licensed Mental Health Counselor and a true Rogerian at heart, with a passionate belief in each person's capacity to heal and grow. For 16+ years she has worked with children, adolescents, and adults navigating depression, anxiety, grief, trauma, and life stressors.</p>
+    <p class="bio-text">After building Uniquely You Counseling & Wellness Center, LLC from the ground up, Crystal now carries a clear mission: to show other therapists exactly how to do the same. She brings every hard-won lesson into her work with therapists who are ready to build.</p>
+    <p class="bio-text" style="font-weight:600;color:var(--coral);font-style:italic">"After 16+ years and finally establishing my own private firm, I want to show other therapists how to scale and do it too."</p>
+    <div class="bio-stats">
+      <div><div class="bio-stat-num">16+</div><div class="bio-stat-label">Years Experience</div></div>
+      <div><div class="bio-stat-num">3</div><div class="bio-stat-label">Populations Served</div></div>
+      <div><div class="bio-stat-num">1</div><div class="bio-stat-label">Proven System</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="money" id="money">
+  <div>
+    <span class="section-label">05 — Results & Income</span>
+    <h2 class="section-title">Your license should<br><em>not</em> limit<br>your income.</h2>
+    <p class="section-sub">You do not need more clients. You need better systems. Consistent, sustainable income as a therapist is not a fantasy. It is a structure problem, and structure can be fixed.</p>
+    <a href="#pricing" class="btn-primary" style="margin-top:2rem">Join the Program</a>
+  </div>
+  <div class="money-cards">
+    <div class="money-card"><div class="money-icon">💰</div><div><h4>Fill Your Caseload Without Burning Out</h4><p>Learn referral systems that work quietly in the background so you stop scrambling every time a client ends.</p></div></div>
+    <div class="money-card"><div class="money-icon">📈</div><div><h4>Set Rates You're Proud Of</h4><p>Understand your market, your value, and how to communicate both with confidence.</p></div></div>
+    <div class="money-card"><div class="money-icon">🏗️</div><div><h4>Scale Beyond One-on-One</h4><p>Group practice, intensives, and packages show that your income ceiling is a choice, not a rule.</p></div></div>
+    <div class="money-card"><div class="money-icon">🎯</div><div><h4>Get Consistent, Qualified Clients</h4><p>Attract the clients you actually want to work with and build a practice around your strengths.</p></div></div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <span class="section-label">06 — Investment Options</span>
+  <h2 class="section-title">Choose How You Want<br>to Build With <em>Crystal</em></h2>
+  <p class="section-sub">Every option below includes the same core framework Crystal used to build her own practice. The difference is the level of access and support you receive.</p>
+  <div class="pricing-grid">
+    <div class="p-card">
+      <div class="p-type">Self-Paced</div>
+      <div class="p-price"><span>$</span>597</div>
+      <div class="p-name">The Course</div>
+      <ul class="p-features">
+        <li>Full Caseload to CEO curriculum</li>
+        <li>LLC, EIN, NPI setup guides</li>
+        <li>Pricing and rate-setting modules</li>
+        <li>Client attraction strategies</li>
+        <li>Lifetime access and updates</li>
+        <li>Private community access</li>
+      </ul>
+      <a class="p-btn" href="mailto:uniquelyyoucounselingwellness@gmail.com?subject=Caseload%20to%20CEO%20Course%20-%20%24597">Get Started</a>
+    </div>
+    <div class="p-card featured">
+      <div class="p-featured-badge">Most Popular</div>
+      <div class="p-type">Group Coaching</div>
+      <div class="p-price"><span>$</span>1,497</div>
+      <div class="p-name">Caseload to CEO™ Program</div>
+      <ul class="p-features">
+        <li>Everything in The Course</li>
+        <li>8-week live group coaching calls</li>
+        <li>Hot seat coaching with Crystal</li>
+        <li>Implementation accountability</li>
+        <li>Peer cohort community</li>
+        <li>Bonus templates and support</li>
+      </ul>
+      <a class="p-btn" href="https://www.paypal.com/ncp/payment/ZVCEDZ9SBYATN" target="_blank" rel="noopener noreferrer">Apply Now</a>
+    </div>
+    <div class="p-card">
+      <div class="p-type">1-on-1 Mentorship</div>
+      <div class="p-price"><span>$</span>3,500</div>
+      <div class="p-name">VIP Private Coaching</div>
+      <ul class="p-features">
+        <li>Everything in the Program</li>
+        <li>Direct 1:1 access to Crystal</li>
+        <li>Custom practice build-out plan</li>
+        <li>Monthly private strategy calls</li>
+        <li>Ongoing support between sessions</li>
+        <li>Done-with-you implementation</li>
+      </ul>
+      <a class="p-btn" href="https://www.paypal.com/ncp/payment/ZJNP6QRU5ZZQ6" target="_blank" rel="noopener noreferrer">Apply for VIP</a>
+    </div>
+  </div>
+  <p class="pricing-note">The $597 course button opens email so Crystal can send direct enrollment details. The $1,497 and $3,500 options go straight to secure PayPal checkout.</p>
+</section>
+
+<section class="cta-section" id="cta">
+  <span class="section-label">Ready to Build?</span>
+  <h2 class="section-title" style="margin:0 auto 1rem;max-width:640px">This is for the therapist<br>who knows <em>there's more.</em></h2>
+  <p class="section-sub" style="margin:0 auto 3rem;text-align:center">You're skilled, licensed, and tired of settling. The Caseload to CEO™ program is built for you. Choose your next step below and connect with Crystal directly.</p>
+  <div class="cta-box">
+    <h3>I'm building something<br>for therapists who are ready.</h3>
+    <p>Whether you want self-paced training, group support, or private coaching, this is your invitation to build a practice that fits your life.</p>
+    <div class="cta-actions">
+      <a class="cta-link primary" href="mailto:uniquelyyoucounselingwellness@gmail.com?subject=Caseload%20to%20CEO%20Inquiry">Email Crystal</a>
+      <a class="cta-link secondary" href="https://www.paypal.com/ncp/payment/ZVCEDZ9SBYATN" target="_blank" rel="noopener noreferrer">Join Group Program</a>
+    </div>
+    <p class="cta-note">For the self-paced course, use the $597 button above. For custom support, email Crystal directly.</p>
+    <div class="cta-contact">Contact: <a href="mailto:uniquelyyoucounselingwellness@gmail.com">uniquelyyoucounselingwellness@gmail.com</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">Caseload to <span>CEO</span>™ · Crystal Kelly, LMHC</div>
+  <p>© 2026 Uniquely You Counseling & Wellness Center, LLC · All rights reserved.</p>
+  <nav>
+    <a href="#burnout">Reality Check</a>
+    <a href="#bio">About</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#cta">Work With Me</a>
+  </nav>
+</footer>
+
+</body>
+</html>
